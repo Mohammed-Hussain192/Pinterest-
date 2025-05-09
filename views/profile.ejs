@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="../styles/profile.css">
+</head>
+<body>
+    <div class="container">
+      <% if(suc.length>0) { %>
+        <p class="suc"><%= suc%></p>
+        <% } %>
+        <div class="nav">
+              <div class="first">
+                <div class="pin">
+                    <img src="../images/pin.png" alt="" height="40px">
+                  </div>
+                  <div class="home">
+                        <div class="inner">
+                            <a id="im1" href="/home"><img src="../images/homepage.png" alt="" height="30px"></a>
+                            <p id="t1" class="tol">Home</p>
+                        </div>
+                  </div>
+                  <div class="exp">
+                    <div class="inner">
+                        <a id="im2" href="/explore"><img src="../images/explore.png" alt="" height="30px"></a>
+                        <p id="t2" class="tol">Expore</p>
+                    </div>
+                  </div>
+                  <div class="add">
+                    <div class="inner">
+                        <a id="im3" href="/addpin"><img src="../images/add.png" alt="" height="30px"></a>
+                        <p id="t3" class="tol">Create</p>
+                    </div>
+                  </div>
+                  <div class="notify">
+                    <div class="inner">
+                        <a id="im4" href="/update/user"><img src="../images/bell.png" alt="" height="30px"></a>
+                        <p id="t4" class="tol">Updates</p>
+                    </div>
+                  </div>
+                  <div class="mes">
+                    <div class="inner">
+                        <a id="im5" href=""><img src="../images/messenger.png" alt="" height="30px"></a>
+                        <p id="t5" class="tol">Messages</p>
+                    </div>
+                  </div>
+              </div>
+            <div class="sec">
+             <div class="inner">   
+              <a id="im6" href="/setting"><img src="../images/setting.png" alt="" height="30px"></a>
+              </div>
+             </div>
+        </div>   
+        <div class="sample">
+          
+        </div>
+        <div class="main">
+            <div class="navdiv">
+                <form action="/generate-image" method="post">
+                  <input type="text" name="prompt" id="input" placeholder=" Search"> 
+                  <a href="/profile"><img src="../images/user.png" height="30px" alt=""></a>
+                 
+                </form>
+               
+            </div>  
+            <div class="main2">
+               <div class="info">
+                <p class="po">Email: <strong><%= user.email %></strong> </p>
+                <p class="po">Full Name:  <strong><%= user.fullname %></strong></p>
+                <p class="po">Dob:  <strong><%= user.date %></strong></p>
+                <a href="/" class="btn">Log out</a>
+                
+               </div>
+               <hr>
+               <div class="posts">
+                <h3 class="po" style="text-align: center;">Your Posts</h3>
+                <div class="gallery">
+                    <% if (posts.length > 0) { %>
+                    <% posts.forEach(post => { %>
+                      
+                        <div class="acutalimage">
+                          
+                          <div class="hove3">
+                            <form class="save2" action="/delete/post/image" method="post">
+                              <input type="hidden" name="image" value="<%= post.img%>" id="">
+                              <input type="submit" name="" value="Remove" id="save">
+                            </form>
+                            <form action="/edit/image" class="save" method="get">
+                              <input type="hidden" value="<%= post.img %>" name="image" id="">
+                              <input  type="submit" value="Edit" name="" id="save">
+                              
+                              <a href="#" onclick="downloadImage('<%= post.img%>')" ><img id="dow" src="images/dow.png"  alt="" ></a>
+                            
+                            
+                            </form>
+                           
+                           
+                          </div>
+                          <img id="img" src="<%= post.img %>" alt="Random Unsplash Image">
+                          
+                        </div>
+                        
+                    <% }) %>
+                    <% } else { %>
+                        <p>No posts found.</p>
+                        <% } %>
+                </div>
+               </div>
+               <div class="posts">
+                <h3 class="po" style="text-align: center;">Saved Images</h3>
+                <div class="gallery">
+                    <% if (saves.length > 0) { %>
+                    <% saves.forEach(save => { %>
+                      
+                        <div class="acutalimage">
+                          <div class="hove3">
+                            <form action="/delete/saved/image" class="save" method="post">
+                                <input type="hidden" name="Image" value="<%= save.img%>" id="">
+                                <input type="submit" name="" value="Remove" id="save">
+                              <a href="#" onclick="downloadImage('<%= save.img%>')" ><img id="dow" src="images/dow.png"  alt="" ></a>
+                            </form>
+                          </div>
+                          <img id="img" src="<%= save.img %>" alt="Random Unsplash Image">
+                          
+                        </div>
+                        
+                    <% }) %>
+                    <% } else { %>
+                        <p>No Saves found.</p>
+                        <% } %>
+                </div>
+            </div>
+              
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/scripts/home.js"></script>
+    <script>
+      async function downloadImage(imageUrl) {
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "downloaded-image.jpg"; // Set the default filename
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+    </script>
+</body>
+</html>

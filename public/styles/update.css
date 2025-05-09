@@ -1,0 +1,149 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+   
+}
+
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+ }
+ .loader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #e60023;
+ }
+ .logo {
+    width: 80px;
+    height: 80px;
+ }
+.container
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+  
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.019);
+}
+.nav{
+    height: 100%;
+    width: 3.5%;
+    position: fixed;
+    border-right: 1px solid rgb(147, 141, 141);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    gap: 30%;
+    background-color: rgb(255, 255, 255);
+   
+    
+  
+}
+.sample{
+    height: 100%;
+    width: 3.5%;
+    border-right: 1px solid rgb(147, 141, 141);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    gap: 30%;
+    background-color: rgb(255, 255, 255);
+   
+    
+  
+}
+.first{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vw;
+}
+.inner{
+    
+    gap: 5px;
+    width: 150%;
+}
+.first div{
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}.tol{
+    position: absolute;
+    left: 60px;
+    font-weight: 400;
+    background-color: black;
+    color:white;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 80px;
+    opacity: 0;
+    
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(247, 247, 0);
+}
+.navdiv{
+    height: 10%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.main2{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+form{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4%
+   
+}
+#input{
+    height:50%;
+    width:90%;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(178, 170, 170, 0.168);
+}

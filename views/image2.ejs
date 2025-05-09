@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+              <div class="first">
+                <div class="pin">
+                    <img src="images/pin.png" alt="" height="40px">
+                  </div>
+                  <div class="home">
+                        <div class="inner">
+                            <a id="im1" href="/home"><img src="images/homepage.png" alt="" height="30px"></a>
+                            <p id="t1" class="tol">Home</p>
+                        </div>
+                  </div>
+                  <div class="exp">
+                    <div class="inner">
+                        <a id="im2" href="/explore"><img src="images/explore.png" alt="" height="30px"></a>
+                        <p id="t2" class="tol">Expore</p>
+                    </div>
+                  </div>
+                  <div class="add">
+                    <div class="inner">
+                        <a id="im3" href="/addpin"><img src="images/add.png" alt="" height="30px"></a>
+                        <p id="t3" class="tol">Create</p>
+                    </div>
+                  </div>
+                  <div class="notify">
+                    <div class="inner">
+                        <a id="im4" href="/update/user"><img src="images/bell.png" alt="" height="30px"></a>
+                        <p id="t4" class="tol">Updates</p>
+                    </div>
+                  </div>
+                  <div class="mes">
+                    <div class="inner">
+                        <a id="im5" href=""><img src="images/messenger.png" alt="" height="30px"></a>
+                        <p id="t5" class="tol">Messages</p>
+                    </div>
+                  </div>
+              </div>
+            <div class="sec">
+             <div class="inner">   
+              <a id="im6" href="/setting"><img src="images/setting.png" alt="" height="30px"></a>
+              </div>
+             </div>
+        </div>   
+        <div class="sample">
+          
+        </div>
+        <div class="main">
+              <div class="navdiv">
+                <form action="/generate-image" method="post">
+                  <input type="text" name="prompt" id="input" placeholder=" Search"> 
+                  <a href="/profile"><img src="images/user.png" height="30px" alt=""></a>
+                 
+                </form>
+               
+              </div>  
+              <div class="main2">
+                <div class="gallery">
+                  <% images.forEach(image => { %>
+                    
+                      <div class="acutalimage">
+                        <div class="hove3">
+                          <form action="/save"  method="post" class="save">
+                            <input type="hidden" value="<%= image.link %>" name="" id="">
+                            <input  type="submit" value="Save" name="" id="save">
+                            <a href="#" onclick="downloadImage('<%= image.link%>')" ><img id="dow" src="images/dow.png"  alt="" ></a>
+                          </form>
+                        </div>
+                        <img id="img" src="<%= image.link %>" alt="Random Unsplash Image">
+                        
+                      </div>
+                      
+                  <% }) %>
+              </div>
+              </div>
+        </div>
+    </div>
+
+    <script src="scripts/home.js"></script>
+    <script>
+      async function downloadImage(imageUrl) {
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "downloaded-image.jpg"; // Set the default filename
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+body{
+    height: 100vh;
+    width: 100%;
+    margin: 0;padding: 0;
+}.container
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../images/bg.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.form{
+    height: 100%;
+     width: 50%;
+     background-color: #adf1e800;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ form{
+    height: 75%;
+    width: 50%;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 40px;
+    gap: 7px;
+   
+ }
+ input{
+    height: 40px;
+    width: 60%;
+    border-radius: 10px;
+    border:1px solid grey;
+ }
+ label{
+    width: 60%;
+    text-align: start;
+    
+ }
+ .wel{
+    font-size: 1.5vw;
+ }
+ .fn{
+    font-size: 1.2vw;
+ }
+ .content{
+    height: 100%;
+    width: 100%;
+    display: flex;justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.707);
+ }
+ .btn{
+    height: 40px;
+    background-color: red;
+    color: white;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+}
+.suc{
+
+   height: 50px;
+   width: 30%;
+   resize: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgb(246, 52, 42);
+   color: white;
+ 
+   left: 35%;
+   bottom: 90%;
+   position: absolute;
+   z-index: 20;
+   font-size: 1vw;
+   border-radius: 0px 0px 10px 10px;
+   border: 1px solid rgb(255, 255, 255);
+   text-transform: capitalize;
+   font-weight: 400;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}

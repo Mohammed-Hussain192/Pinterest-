@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="../styles/addpin.css">
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="V-Pinterest Logo">
+        <span class="text">V-Pinterest</span>
+    </div>
+</div>
+    <div class="container">
+      <% if(suc.length>0) { %>
+        <p class="suc"><%= suc%></p>
+        <% } %>
+        <div class="nav">
+              <div class="first">
+                <div class="pin">
+                    <img src="images/pin.png" alt="" height="40px">
+                  </div>
+                  <div class="home">
+                        <div class="inner">
+                            <a id="im1" href="/home"><img src="images/homepage.png" alt="" height="30px"></a>
+                            <p id="t1" class="tol">Home</p>
+                        </div>
+                  </div>
+                  <div class="exp">
+                    <div class="inner">
+                        <a id="im2" href="/explore"><img src="images/explore.png" alt="" height="30px"></a>
+                        <p id="t2" class="tol">Expore</p>
+                    </div>
+                  </div>
+                  <div class="add">
+                    <div class="inner">
+                        <a id="im3" href="/addpin"><img src="images/add.png" alt="" height="30px"></a>
+                        <p id="t3" class="tol">Create</p>
+                    </div>
+                  </div>
+                  <div class="notify">
+                    <div class="inner">
+                        <a id="im4" href="/update/user"><img src="images/bell.png" alt="" height="30px"></a>
+                        <p id="t4" class="tol">Updates</p>
+                    </div>
+                  </div>
+                  <div class="mes">
+                    <div class="inner">
+                        <a id="im5" href=""><img src="images/messenger.png" alt="" height="30px"></a>
+                        <p id="t5" class="tol">Messages</p>
+                    </div>
+                  </div>
+              </div>
+            <div class="sec">
+             <div class="inner">   
+              <a id="im6" href="/setting"><img src="images/setting.png" alt="" height="30px"></a>
+              </div>
+             </div>
+        </div>   
+        <div class="sample">
+          
+        </div>
+        <div class="main">
+            <div class="navdiv">
+                <form action="/generate-image" method="post">
+                  <input type="text" name="prompt" id="input" placeholder=" Search"> 
+                  <a href="/profile"><img src="images/user.png" height="30px" alt=""></a>
+                 
+                </form>
+               
+            </div>  
+            <div class="main2">
+               <div class="g1">
+                    <div class="imgd">
+                        <img src="" alt="" id="imgad"alt="image" >
+                    </div>
+               </div>
+               <div class="g2">
+                <h2>Create Post</h2>
+                    <form class="data" action="/create/post" method="post" aria-required="true">
+                        <label  for="img">Image URl</label>
+                        <input aria-required="true" type="text" name="img" id="imgurl" placeholder="Image URL">
+                        <label for="tittle">Tittle</label>
+                        <input aria-required="true"  type="text" minlength="5" name="tittle" id="" placeholder="Tittle ">
+                        <label for="desc">Description</label>
+                        <input aria-required="true"  type="text" minlength="5" name="desc" id="" placeholder="Description">
+                        <label for="cate">Category</label>
+                        <input aria-required="true"  type="text" name="cate" id="" placeholder="Category ex:Animal,Nature">
+                        <input type="submit" name="" id="" class="btn" value="Create Pin">
+
+                    </form>
+               </div>
+            </div>
+              
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../scripts/addpin.js"></script>
+    <script>
+      async function downloadImage(imageUrl) {
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "downloaded-image.jpg"; // Set the default filename
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+    </script>
+</body>
+</html>

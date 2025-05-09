@@ -1,0 +1,11 @@
+ <form action="">
+                    <label for="img">Image URl</label>
+                    <input type="text" name="img" id="" placeholder="Image URL">
+                    <label for="tittle">Image URl</label>
+                    <input type="text" name="tittle" id="" placeholder="Tittle ">
+                    <label for="desc">Image URl</label>
+                    <input type="text" name="desc" id="" placeholder="Description">
+                    <label for="cate">Image URl</label>
+                    <input type="text" name="cate" id="" placeholder="Category ex:Animal,Nature">
+
+                </form>

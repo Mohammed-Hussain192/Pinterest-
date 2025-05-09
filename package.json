@@ -1,0 +1,29 @@
+{
+  "name": "pintrest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "pintrest"
+  },
+  "author": "JUSTCODE_TEAM",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.7",
+    "cookieparser": "^0.1.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "moment": "^2.30.1",
+    "mongoose": "^8.13.1",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9"
+  }
+}

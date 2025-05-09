@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="../styles/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <% if(suc.length>0) { %>
+                <p class="suc"><%= suc%></p>
+                <% } %>
+        <div class="form">
+           
+            <form action="/create/user" method="post" aria-required="true">
+                <img src="../images/pin.png" alt="" height="50px">
+                <p class="wel">Welcome to Pinterest</p>
+                <p class="fn">Find new ideas to try</p>
+        
+                <label for="name">Full Name</label>
+                <input type="text" minlength="8" name="name" id="" placeholder="Full Name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="" placeholder="Email">
+                <label for="password">Password</label>
+                <input type="password" minlength="8" name="password" id="pass" onmouseover="change()" onmouseleave="change2()" placeholder="Password">
+                <label for="dob">BirthDate</label>
+                <input type="date" name="dob" id="">
+                <input type="submit" name=""class="btn" id="" value="continue">
+                <p>Already a member?<a href="" class="em">Log in </a></p>
+            </form>
+        </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../scripts/register.js"></script>
+    
+    
+</body>
+</html>

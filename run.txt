@@ -1,0 +1,10 @@
+##execuition 
+open the folder in text-editor(VS code)
+1)open the terminal in vscode
+    note: you have to download node js , and mongo db in your system 
+
+2)Install Dependencies
+In the project root directory, run:
+    npm install express nodemon  ejs mongoose axios cors moment nodemailer express-session connect-flash cookie-parser
+3)after installing Dependencies
+    npx nodemon index.js

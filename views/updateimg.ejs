@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="../styles/updateimg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            
+        <div class="form">
+
+            <form action="/update/img/data" method="post">
+                <img src="../images/pin.png" alt="" height="50px">
+                <img id="imgad" src="<%= posty.img %>" alt="" height="300px">
+                <input type="hidden" name="dimg" value="<%= posty.img %>" id="">
+                <label for="img">Change Image URL</label>
+                <input type="text" name="uimg" id="imgurl" value=""  placeholder="<%= posty.img %>" required>
+                <label for="img">Update Tittle</label>
+                <input type="text" name="tittle" id="" placeholder="<%=posty.tittle %>" required>
+                <label for="img">Update Description</label>
+                <input type="text" name="desc" id="" placeholder="<%=posty.desc %>" required>
+
+                <input type="submit" value="Update Post" class="btn " name="" id="">
+            </form>
+            
+        </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../scripts/login.js"></script>
+    <script>
+        const imgurl= document.querySelector("#imgurl")
+        const imgad= document.querySelector("#imgad")
+
+        imgurl.addEventListener("change",()=>{
+        imgad.src=imgurl.value
+})
+    </script>
+</body>
+</html>

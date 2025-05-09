@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      Pinterest</title>
+    <link rel="icon" href="../images/pin.png">
+    <link rel="stylesheet" href="styles/explore.css">
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="V-Pinterest Logo">
+        <span class="text">V-Pinterest</span>
+    </div>
+</div>
+    <div class="container">
+        <div class="nav">
+              <div class="first">
+                <div class="pin">
+                    <img src="images/pin.png" alt="" height="40px">
+                  </div>
+                  <div class="home">
+                        <div class="inner">
+                            <a id="im1" href="/home"><img src="images/homepage.png" alt="" height="30px"></a>
+                            <p id="t1" class="tol">Home</p>
+                        </div>
+                  </div>
+                  <div class="exp">
+                    <div class="inner">
+                        <a id="im2" href="/explore"><img src="images/explore.png" alt="" height="30px"></a>
+                        <p id="t2" class="tol">Expore</p>
+                    </div>
+                  </div>
+                  <div class="add">
+                    <div class="inner">
+                        <a id="im3" href="/addpin"><img src="images/add.png" alt="" height="30px"></a>
+                        <p id="t3" class="tol">Create</p>
+                    </div>
+                  </div>
+                  <div class="notify">
+                    <div class="inner">
+                        <a id="im4" href="/update/user"><img src="images/bell.png" alt="" height="30px"></a>
+                        <p id="t4" class="tol">Updates</p>
+                    </div>
+                  </div>
+                  <div class="mes">
+                    <div class="inner">
+                        <a id="im5" href=""><img src="images/messenger.png" alt="" height="30px"></a>
+                        <p id="t5" class="tol">Messages</p>
+                    </div>
+                  </div>
+              </div>
+            <div class="sec">
+             <div class="inner">   
+              <a id="im6" href="/setting"><img src="images/setting.png" alt="" height="30px"></a>
+              </div>
+             </div>
+        </div>   
+        <div class="sample">
+          
+        </div>
+        <div class="main">
+          <div class="navdiv">
+            <form action="/generate-image" method="post">
+              <input type="text" name="prompt" id="input" placeholder=" Search"> 
+              <a href="/profile"><img src="images/user.png" height="30px" alt=""></a>
+             
+            </form>
+           
+          </div>
+          <div class="main2">
+           <div class="info">
+            <% if(date.length>0) { %>
+              <p class="date"><%= date %></p>
+              <% } %>
+              <p class="he">Stay inspired</p>
+           </div>
+            <div class="imgs">
+              
+              <a href="/nature/image"><div class="dis">
+                <img class="im" src="images/natur.jpeg" alt="" >
+                <p class="ph">Nature</p>
+              </div></a>
+              <a href="/animal/image"><div class="dis">
+                <img class="im" src="images/animal.jpeg" alt="">
+                <p class="ph">Animal</p>
+              </div></a>
+              <a href="/anime/image"><div class="dis">
+                <img class="im" src="images/anime.jpeg" alt="">
+                <p class="ph">Anime</p>
+              </div></a>
+              <a href="/Ai-generated/image"><div class="dis">
+                <img class="im" src="images/Ai.jpeg" alt="">
+                <p class="ph">AI generated Image</p>
+              </div></a>
+              
+              
+            </div>
+            <br>
+          </div>
+        </div>
+        
+    </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="scripts/home.js"></script>
+    
+</body>
+</html>
